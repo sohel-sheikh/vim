@@ -1,3 +1,5 @@
-" make vim either more Vi-compatible, or make Vim behave in a more useful way
-" [taken from vim documentation]
-set nocompatible
+set nocompatible " be iMproved, required by vundle
+
+filetype off "required by vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim

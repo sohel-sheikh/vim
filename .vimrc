@@ -30,3 +30,6 @@ let mapleader="\<Space>" "with mapleader its possible to do extra key combinatio
 nmap <leader>w :w!<cr> "nmap is normal mode map, to save current file
 nmap <leader>q :q!<cr>
 nmap <leader>e :wq!<cr>
+
+inoremap jk <ESC> "map ESC to jk in insert mode
+"noremap ensure non-recursive map (:help noremap - for more help)

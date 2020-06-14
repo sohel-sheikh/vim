@@ -33,3 +33,19 @@ nmap <leader>e :wq!<cr>
 
 inoremap jk <ESC> "map ESC to jk in insert mode
 "noremap ensure non-recursive map (:help noremap - for more help)
+
+"unmap arrow keys (for your own good)
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+"insert mode
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+"visual mode
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>

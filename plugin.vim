@@ -8,6 +8,7 @@ endfunction
 if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-commentary'

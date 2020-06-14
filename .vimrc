@@ -68,3 +68,5 @@ endfunction
 " }
 
 call SourceIfExists('plugin.vim')
+filetype plugin indent on
+syntax on

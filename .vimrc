@@ -49,3 +49,6 @@ vno <down> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
+
+au BufWinLeave *.* mkview "save file view on close (preserve folds cursor position etc)
+au BufWinEnter *.* silent loadview "restore view on file open

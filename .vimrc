@@ -56,3 +56,13 @@ vno <up> <Nop>
 
 au BufWinLeave *.* mkview "save file view on close (preserve folds cursor position etc)
 au BufWinEnter *.* silent loadview "restore view on file open
+
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
+call SourceIfExists('plugin.vim')

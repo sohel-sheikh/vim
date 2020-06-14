@@ -21,7 +21,11 @@ set showcmd
 set laststatus = 2
 set cmdheight = 1
 
+set wildmenu "display matches when tab used in cmd mode
+
 set incsearch "highlight text while typing search
+
+set path+=** "enable fuzzy search; provide tab-completion for all files related tasks; search down into subfolders
 
 " set list "show whitespace chars
 " set listchars=eol:$,tab:>\ ,trail:x

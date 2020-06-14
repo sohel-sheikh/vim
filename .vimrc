@@ -56,8 +56,8 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-au BufWinLeave *.* mkview "save file view on close (preserve folds cursor position etc)
-au BufWinEnter *.* silent loadview "restore view on file open
+" au BufWinLeave *.* mkview "save file view on close (preserve folds cursor position etc)
+" au BufWinEnter *.* silent loadview "restore view on file open
 
 " Function to source only if file exists {
 function! SourceIfExists(file)

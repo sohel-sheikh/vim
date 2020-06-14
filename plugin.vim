@@ -6,5 +6,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()

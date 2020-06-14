@@ -31,11 +31,13 @@ set path+=** "enable fuzzy search; provide tab-completion for all files related 
 " set listchars=eol:$,tab:>\ ,trail:x
 
 let mapleader="\<Space>" "with mapleader its possible to do extra key combinations
-nmap <leader>w :w!<cr> "nmap is normal mode map, to save current file
+"nmap is normal mode map, to save current file
+nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>e :wq!<cr>
 
-inoremap jk <ESC> "map ESC to jk in insert mode
+"map ESC to jk in insert mode
+inoremap jk <ESC>
 "noremap ensure non-recursive map (:help noremap - for more help)
 
 "unmap arrow keys (for your own good)

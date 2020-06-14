@@ -10,16 +10,16 @@ set relativenumber "display line number relative to current line
 
 set smarttab "be smart when using tabs
 
-set tabstop = 4
-set shiftwidth = 4
+set tabstop=4
+set shiftwidth=4
 set ai "auto indent
 set wrap "wrap lines
 
 set autoread "to autoread when file is changed from outside
 
 set showcmd
-set laststatus = 2
-set cmdheight = 1
+set laststatus=2
+set cmdheight=1
 
 set wildmenu "display matches when tab used in cmd mode
 

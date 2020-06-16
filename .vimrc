@@ -5,7 +5,7 @@ filetype off "required by vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
 set ruler "display row and column of cursor in bottom status bar
-
+set number "display absolute line number
 set relativenumber "display line number relative to current line
 
 set smarttab "be smart when using tabs

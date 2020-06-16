@@ -1,4 +1,4 @@
-set nocompatible " be iMproved, required by vundle
+set nocompatible "be iMproved, required by vundle
 
 filetype off "required by vundle
 
@@ -25,7 +25,8 @@ set wildmenu "display matches when tab used in cmd mode
 
 set incsearch "highlight text while typing search
 
-set path+=** "enable fuzzy search; provide tab-completion for all files related tasks; search down into subfolders
+"enable fuzzy search; provide tab-completion for all files related tasks; search down into subfolders
+set path+=**
 
 " set list "show whitespace chars
 " set listchars=eol:$,tab:>\ ,trail:x

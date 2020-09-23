@@ -1,73 +1,124 @@
-set nocompatible "be iMproved, required by vundle
+set nocompatible
 
-filetype off "required by vundle
+syntax on
+filetype plugin on
+filetype indent on
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set number
+set relativenumber
 
-set ruler "display row and column of cursor in bottom status bar
-set number "display absolute line number
-set relativenumber "display line number relative to current line
-
-set smarttab "be smart when using tabs
-
-set tabstop=4
-set shiftwidth=4
-set ai "auto indent
-set wrap "wrap lines
-
-set autoread "to autoread when file is changed from outside
-
+set ai
 set showcmd
-set laststatus=2
-set cmdheight=1
 
-set wildmenu "display matches when tab used in cmd mode
+set updatetime=50
 
-set incsearch "highlight text while typing search
-
-"enable fuzzy search; provide tab-completion for all files related tasks; search down into subfolders
+set incsearch
 set path+=**
 
-" set list "show whitespace chars
-" set listchars=eol:$,tab:>\ ,trail:x
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
 
-let mapleader="\<Space>" "with mapleader its possible to do extra key combinations
-"nmap is normal mode map, to save current file
-nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>e :wq!<cr>
+set scrolloff=8
 
-"map ESC to jk in insert mode
-inoremap jk <ESC>
-"noremap ensure non-recursive map (:help noremap - for more help)
+set cmdheight=2
+set wildmenu
 
-"unmap arrow keys (for your own good)
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-"insert mode
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" ====== plugins ======
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'preservim/nerdtree'
+Plug 'mbbill/undotree'
+
+Plug 'gruvbox-community/gruvbox'
+Plug 'vim-airline/vim-airline'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'fatih/vim-go'
+Plug 'SirVer/ultisnips'
+
+call plug#end()
+" ====== plugins ======
+
+" ====== key bindins ======
+let mapleader = "\<Space>"
+
+inoremap jk <Esc>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>e :wq<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+
 ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
-"visual mode
+
 vno <down> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-" au BufWinLeave *.* mkview "save file view on close (preserve folds cursor position etc)
-" au BufWinEnter *.* silent loadview "restore view on file open
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+" ====== key bindins ======
 
-" Function to source only if file exists {
-function! SourceIfExists(file)
-  if filereadable(expand(a:file))
-    exe 'source' a:file
-  endif
-endfunction
-" }
+" ====== theme settings ======
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
+" ====== theme settings ======
 
-call SourceIfExists('plugin.vim')
-filetype plugin indent on
-syntax on
+" ====== vim go (polyglot) settings ======
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_auto_sameids = 1
+" ====== vim go (polyglot) settings ======
+
+" ====== variables for vim go ======
+let g:go_fmt_command = "goimports"
+" ====== variables for vim go ======
+
+" ====== commands ======
+command! MakeTags !ctags -R .
+
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
+
+au FileType go nmap <leader>v <Plug>(go-build)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>f <Plug>(go-fmt)
+au FileType go nmap <leader>t :!go test -v --bench . --benchmem<cr>
+au FileType go let g:go_fmt_command = "goimports"
+" ====== commands ======
+

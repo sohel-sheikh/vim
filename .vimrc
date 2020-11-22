@@ -48,6 +48,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'SirVer/ultisnips'
 
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'w0rp/ale'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 call plug#end()
 " ====== plugins ======
 
@@ -109,6 +119,12 @@ let g:go_auto_sameids = 1
 let g:go_fmt_command = "goimports"
 " ====== variables for vim go ======
 
+" ====== prettier settings ======
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" ====== prettier settings ======
+
 " ====== commands ======
 command! MakeTags !ctags -R .
 
@@ -121,5 +137,7 @@ au FileType go nmap <leader>f <Plug>(go-fmt)
 au FileType go nmap <leader>t :!go test -v --bench . --benchmem<cr>
 au FileType go let g:go_fmt_command = "goimports"
 au FileType go nmap <leader>ct :GoCoverageToggle<cr>
+
+au FileType css,scss let b:prettier_exec_cmd = "prettier-stylelint"
 " ====== commands ======
 

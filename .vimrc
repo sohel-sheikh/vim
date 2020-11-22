@@ -120,9 +120,9 @@ let g:go_fmt_command = "goimports"
 " ====== variables for vim go ======
 
 " ====== prettier settings ======
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
+au InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " ====== prettier settings ======
 
 " ====== commands ======

@@ -120,5 +120,6 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>f <Plug>(go-fmt)
 au FileType go nmap <leader>t :!go test -v --bench . --benchmem<cr>
 au FileType go let g:go_fmt_command = "goimports"
+au FileType go nmap <leader>ct :GoCoverageToggle<cr>
 " ====== commands ======
 

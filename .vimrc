@@ -125,6 +125,12 @@ let g:prettier#config#trailing_comma = 'all'
 au InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " ====== prettier settings ======
 
+" ====== eslint settings ======
+let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+" ====== eslint settings ======
+
 " ====== commands ======
 command! MakeTags !ctags -R .
 

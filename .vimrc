@@ -58,6 +58,9 @@ Plug 'jparise/vim-graphql'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 " ====== plugins ======
 
@@ -71,6 +74,13 @@ nnoremap <leader>Q :q!<CR>
 nnoremap <leader>e :wq<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>o :Files<CR>
+nnoremap <silent> <leader>s: :History:<CR>
+nnoremap <silent> <leader>s/ :History/<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>mr :Marks<CR>
+nnoremap <silent> <leader>mp :Maps<CR>
+nnoremap <silent> <leader>t :Windows<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>

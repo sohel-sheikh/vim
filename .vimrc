@@ -77,6 +77,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <leader>o :Files<CR>
 nnoremap <silent> <leader>s: :History:<CR>
 nnoremap <silent> <leader>s/ :History/<CR>
+nnoremap <silent> <leader>sl :BLines<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>mr :Marks<CR>
 nnoremap <silent> <leader>mp :Maps<CR>
@@ -88,6 +89,10 @@ nnoremap <leader>l :wincmd l<CR>
 
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>ez :e $MYZSH<CR>
+nmap <silent> <leader>sz :!source $MYZSH<CR>
+nmap <silent> <leader>eb :e $MYBASH<CR>
+nmap <silent> <leader>sb :!source $MYBASH<CR>
 
 ino <down> <Nop>
 ino <left> <Nop>
